@@ -313,3 +313,6 @@ definitions:
       longitude:
         type: "number"
         format: "float"
+      description:
+        type: "string"
+        example: "description of point"
