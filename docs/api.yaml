@@ -14,19 +14,19 @@ host: "www.example.com"
 basePath: "/v1"
 
 tags:
-- name: "segment"
+- name: "segments"
   description: "緯度経度の時系列データ"
-- name: "point"
+- name: "points"
   description: "緯度経度データ"
 
 schemes:
 - "https"
 
 paths:
-  /segment:
+  /segments:
     post:
       tags:
-      - "segment"
+      - "segments"
       summary: "Add a new segment"
       description: ""
       operationId: "addSegment"
@@ -47,10 +47,10 @@ paths:
       security:
       - api_key: []
 
-  /segment/{segmentId}:
+  /segments/{segmentId}:
     get:
       tags:
-      - "segment"
+      - "segments"
       summary: "Find segment by ID"
       description: "Returns a single segment"
       operationId: "getSegmentById"
@@ -77,7 +77,7 @@ paths:
 
     put:
       tags:
-      - "segment"
+      - "segments"
       summary: "Updates a segment"
       description: ""
       operationId: "updateSegment"
@@ -110,7 +110,7 @@ paths:
 
     post:
       tags:
-      - "segment"
+      - "segments"
       summary: "Add a point to segment"
       description: ""
       operationId: "addPointToSegment"
@@ -143,7 +143,7 @@ paths:
 
     delete:
       tags:
-      - "segment"
+      - "segments"
       summary: "Deletes a segment"
       description: ""
       operationId: "deleteSegment"
@@ -168,10 +168,10 @@ paths:
       security:
         - api_key: []
 
-  /point:
+  /points:
     post:
       tags:
-      - "point"
+      - "points"
       summary: "Add a new point"
       description: ""
       operationId: "addPoint"
@@ -187,15 +187,19 @@ paths:
         schema:
           $ref: "#/definitions/Point"
       responses:
-        "405":
-          description: "Invalid input"
+        "200":
+          description: "Successful Operation"
+        "400":
+          description: "Invalid JSON"
+        "500":
+          description: "Internal Server Error"
       security:
       - api_key: []
 
-  /point/{pointId}:
+  /points/{pointId}:
     get:
       tags:
-      - "point"
+      - "points"
       summary: "Find point by ID"
       description: "Returns a single point"
       operationId: "getPointById"
@@ -222,7 +226,7 @@ paths:
 
     put:
       tags:
-      - "point"
+      - "points"
       summary: "Updates a point"
       description: ""
       operationId: "updatePoint"
@@ -255,7 +259,7 @@ paths:
 
     delete:
       tags:
-      - "point"
+      - "points"
       summary: "Deletes a point"
       description: ""
       operationId: "deletePoint"

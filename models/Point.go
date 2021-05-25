@@ -8,8 +8,8 @@ type PointRepository interface {
 }
 
 type Point struct {
-	Id          int     `dynamodbav:"id" json:id`
-	Latitude    float64 `dynamodbav:"latitude" json:latitude`
-	Longitude   float64 `dynamodbav:"longitude" json:longitude`
-	Description string  `dynamodbav:"description" json:description`
+	PointId     int     `dynamodbav:"PointId" json:"id"`
+	Latitude    float64 `dynamodbav:"Latitude" json:"latitude"`
+	Longitude   float64 `dynamodbav:"Longitude" json:"longitude"`
+	Description string  `dynamodbav:"Description" json:"description"`
 }
