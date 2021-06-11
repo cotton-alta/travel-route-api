@@ -2,7 +2,8 @@ package main
 
 import (
 	"encoding/json"
-	"travel-route-api/models"
+
+	"github.com/travel-route-api/models"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
